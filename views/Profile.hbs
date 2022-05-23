@@ -1,0 +1,24 @@
+<!doctype html>
+<html>
+
+<head>
+  <title>User Profile - {{user.username}}</title>
+          <link rel="stylesheet" href="css/theme.css" />
+
+</head>
+
+<body>
+  
+    {{> header user}}
+  <div class="contactus" id="contactus">
+    <h1>User Profile: {{user.username}}</h1><br>
+    <label class="fixedlabel">User Name: </label>{{user.username}}<br><br>
+    <label class="fixedlabel">Is Administrator: </label>{{user.isAdmin}}<br><br><br>
+    <a href="/Profile/Edit">Edit Profile</a><br/><br/><br><br>
+    <h3><a href="/ProfilesDashboard">View Users' Profiles</a></h3>
+
+  </div>
+    {{> footer user}}
+ 
+</body> 
+</html> 

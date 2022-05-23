@@ -1,0 +1,38 @@
+<!doctype html>
+<html>
+
+<head>
+  <title>Profile Editor</title>
+          <link rel="stylesheet" href="/css/styles.css" />
+</head>
+
+<body>
+    {{> header user}}
+    <div class="contactus" id="contactus">
+    <h1>Profile Editor</h1> <br><br>
+    <form method="POST" action="/Profile/Edit">
+      <input type="hidden" name="username" value="{{user.username}}"/>
+      <label class="fixedlabel">User Name: </label>{{user.username}}<br><br>
+
+      <label class="fixedlabel">First Name:</label>
+      <input type="text" name="firstname" value="{{user.firstName}}"/><br><br>
+
+      <label class="fixedlabel">Last Name:</label>
+      <input type="text" name="lastname" value="{{user.lastName}}"/><br><br>
+
+      <label class="fixedlabel">E-mail:</label>
+      <input type="text" name="email" value="{{user.email}}" size="25"/><br><br>
+      
+      <label class="fixedlabel">Phone Number:</label>
+      <input type="text" name="phone" value="{{user.phone}}"/><br><br>
+
+      {{#if user.isAdmin}}
+      <label class="fixedlabel">Is Administrator:</label>
+      <input type="checkbox" name="isAdmin" checked="{{user.isAdmin}}"/><br><br><br>
+      {{/if}}
+      <label class="fixedlabel"></label><button id="loginButton" type="submit" name="submit">Submit</button>
+    </form>
+    </div>
+    {{> footer user}}
+</body> 
+</html> 

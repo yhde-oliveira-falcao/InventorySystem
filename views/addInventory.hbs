@@ -1,0 +1,34 @@
+<!doctype html>
+<html>
+
+<head>
+  <title>Add Inventory Page</title>
+          <link rel="stylesheet" href="/css/styles.css" />
+</head>
+
+<body>
+    {{> header user}}
+    <div class="reportEditor">
+    <h1>Inventory Editor</h1>
+    <form  class="contactus" id="contactus" method="POST" action="/addInventory">
+
+        {{#if inventory.itemName}}
+            <h4>Editing inventory Name: {{inventory.itemName}}</h4><br><br>
+        {{else}} <h3>No Item Found</h3> {{/if}}
+
+        <label class="fixedlabel">Item Name</label>
+        <input type="Text" name="itemN" value="Name" /><br><br>
+        
+        <label class="fixedlabel">Item Quantity</label>
+        <input type="number" name="itemQ" value="Quantity" /><br><br>
+        
+        <label class="fixedlabel">Warehouse</label>
+        <input type="text" name="Warehouse" value="Wharehouse" /><br><br>
+                                                        
+        &nbsp;&nbsp;<label class="fixedlabel"></label>
+        <br><br><br><button id="loginButton" class="button1" type="submit" name="submit">Submit</button><br><br>
+    </form>
+</div>
+    {{> footer user}}
+</body> 
+</html> 

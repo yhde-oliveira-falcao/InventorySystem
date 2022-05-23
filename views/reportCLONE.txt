@@ -1,0 +1,151 @@
+<!doctype html>
+<html>
+
+<head>
+  <title>Reports</title>
+          <link rel="stylesheet" href="css/theme.css" />
+  </head>
+
+<body>
+    {{> header user}}
+    <div class="contactus" id="contactus">
+    <h1>Reports</h1>
+    <p><a href="/report/Edit">Add New Report</a></p>
+    {{#if hasReport}}
+    <table border="1">
+    <thead>
+
+      <tr>
+        <td>&nbsp;</td>
+        <td>ID</td>
+        <td>X</td>
+        <td>R</td>
+        <td>NS</td>
+        <td>C</td>
+        <td>V</td>
+        <td>Cocobread</td>
+        <td>Cash</td>
+        <td>Debit</td>
+        <td>Tips</td>
+        <td>Drinks</td>
+        <td>Extras</td>
+        <td>&nbsp;</td>
+      </tr>
+    </thead>
+    <tbody>
+      {{#each report}}
+      <tr>
+        <td><a href="/report/Edit/{{_id}}">Edit</a></td>
+        <td>{{@index}}: {{_id}}</td>
+        <td>{{X}}</td>
+        <td>{{R}}</td>
+        <td>{{NS}}</td>
+        <td>{{C}}</td>
+        <td>{{V}}</td>
+        <td>{{Cocobread}}</td>
+        <td>{{Cash}}</td>
+        <td>{{Debit}}</td>
+        <td>{{Tips}}</td>
+        <td>{{Drinks}}</td>
+        <td>{{Extras}}</td>
+        <td><a href="/report/Delete/{{_id}}">Delete</a></td>
+      </tr>
+      {{else}}
+      <tr><td colspan="8">No data was found</td></tr>
+      {{/each}}
+    </tbody>
+  </table>
+  {{else}}
+  no report
+  {{/if}}
+  </div>
+  {{>footer}}
+  </body>   
+  </html>   
+
+
+
+
+
+
+
+
+
+<!doctype html>
+<html>
+
+<head>
+  <title>Reports</title>
+          <link rel="stylesheet" href="css/theme.css" />
+  </head>
+
+<body>
+    {{> header user}}
+    <div class="contactus" id="contactus">
+    <h1>Reports</h1>
+    <p><a href="/report/Edit">Add New Report</a></p>
+    {{#if hasReport}}
+    <table border="1">
+      
+    <thead>
+
+      <tr>
+        <td>&nbsp;</td>{{#each report}}<td><a href="/report/Edit/{{_id}}">Edit</a></td> {{/each}}</tr>
+
+        <tr></tr><th>ID</th>{{#each report}} <td>{{@index}}: {{_id}}</td> {{/each}}</tr> 
+        <tr></tr><th>X</th>{{#each report}} <td>{{X}}</td> {{/each}}</tr> 
+        <tr></tr><th>R</th>{{#each report}}  <td>{{R}}</td>{{/each}} </tr> 
+        <tr><th>NS</th>{{#each report}} <td>{{NS}}</td> {{/each}}</tr> 
+        <tr><th>C</th>{{#each report}}   <td>{{C}}</td>{{/each}} </tr> 
+        <tr><th>V</th>{{#each report}} <td>{{V}}</td>  {{/each}}</tr> 
+        <tr><th>Cocobread</th>{{#each report}} <td>{{Cocobread}}</td> {{/each}}</tr> 
+        <tr><th>Cash</th>{{#each report}} <td>{{Cash}}</td> {{/each}}</tr> 
+        <tr><th>Debit</th>{{#each report}} <td>{{Debit}}</td> {{/each}}</tr> 
+        <tr><th>Tips</th>{{#each report}}  <td>{{Tips}}</td> {{/each}}</tr> 
+        <tr><th>Drinks</th>{{#each report}} <td>{{Drinks}}</td> {{/each}}</tr> 
+        <tr><th>Extras</th>{{#each report}} <td>{{Extras}}</td> {{/each}}</tr> 
+        <tr><th>&nbsp;</th>{{#each report}} <td><a href="/report/Delete/{{_id}}">Delete</a></td> {{/each}}</tr> 
+      </tr>
+    </thead>
+    <!--tbody>
+      {{#each report}}
+      <tr>
+        <td><a href="/report/Edit/{{_id}}">Edit</a></td>
+        <td>{{@index}}: {{_id}}</td>
+        <td>{{X}}</td>
+        <td>{{R}}</td>
+        <td>{{NS}}</td>
+        <td>{{C}}</td>
+        <td>{{V}}</td>
+        <td>{{Cocobread}}</td>
+        <td>{{Cash}}</td>
+        <td>{{Debit}}</td>
+        <td>{{Tips}}</td>
+        <td>{{Drinks}}</td>
+        <td>{{Extras}}</td>
+        <td><a href="/report/Delete/{{_id}}">Delete</a></td>
+      </tr>
+      {{else}}
+      <tr><td colspan="8">No data was found</td></tr>
+      {{/each}}
+    </tbody-->
+  </table>
+  {{else}}
+  no report
+  {{/if}}
+  </div>
+  {{>footer}}
+  </body>   
+  </html>   
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,36 @@
+<!doctype html>
+<html>
+
+<head>
+  <title>inventory</title>
+          <link rel="stylesheet" href="css/theme.css" />
+  </head>
+
+<body>
+    {{> header user}}
+    <div class="contactus" id="contactus">
+
+    <h3><a href="/addInventory">Add New inventory</a></h3> <br>
+    <h1>inventory</h1><br>
+    {{#if hasInventory}}
+    <table border="1">
+      
+    <thead>
+
+      <tr>
+        <td>&nbsp;</td>{{#each inventory}}<td><a href="/inventory/Edit/{{itemName}}">Edit</a></td> {{/each}}</tr>
+        <tr></tr><th>Item Name</th>{{#each inventory}} <td>{{itemName}}</td> {{/each}}</tr> 
+        <tr></tr><th>Item Quantity</th>{{#each inventory}}  <td>{{itemQty}}</td>{{/each}} </tr> 
+        <tr><th>Warehouse</th>{{#each inventory}} <td>{{Warehouse}}</td> {{/each}}</tr> 
+      
+        <tr><th>&nbsp;</th>{{#each inventory}} <td><a href="/inventoryDelete/{{itemName}}">Delete</a></td> {{/each}}</tr> 
+      </tr>
+    </thead>
+  </table>
+  {{else}}
+  <h2>no inventory</h2>
+  {{/if}}
+  </div>
+  {{>footer}}
+  </body>   
+  </html>   

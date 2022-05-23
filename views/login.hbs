@@ -1,0 +1,41 @@
+
+<!doctype html>
+<html>
+
+<head>
+  <title>Login</title>
+          <link rel="stylesheet" href="css/styles.css" />
+
+</head>
+
+
+    {{> header user}}
+    <div class="contactus" id="contactus">
+
+        <h1>Login</h1>
+        {{#if errorMsg}}
+            <h5>{{errorMsg}}</h5><BR>
+        {{else}}
+            <h5>Please login below</h5><br/><br/><BR>
+        {{/if}}
+        <form method="post" action="/login">
+            <label class="fixedlabel">Username: </label><input name="username" type="text"><br/><BR>
+            <label class="fixedlabel">Password: </label><input name="password" type="password"><br/><BR>
+            <label class="fixedlabel"></label><br/><BR>
+            <button class="loginButton" 
+                style="background-color: rgb(56, 56, 56);
+                    border: none;
+                    color:#fff;
+                    padding: 15px 32px;
+                    text-align: center;
+                    text-decoration: none;
+                    display: inline-block;
+                    font-size: 16px;" 
+                type="submit">Login
+            </button> <a href="/AddProfile">Register</a>
+         </form>
+    </div>
+    {{> footer user}}
+</body>
+
+</html>

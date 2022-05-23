@@ -1,0 +1,35 @@
+<!doctype html>
+<html>
+
+<head>
+  <title>Users' Dashboard</title>
+          <link rel="stylesheet" href="css/theme.css" />
+  </head>
+
+<body>
+    {{> header user}}
+    <div class="contactus" id="contactus">
+    <h1>Users</h1>
+    <!--p><a href="/AddProfile">Add New User</a></p-->
+    {{#if hasUser}}
+    <table border="1">
+      
+    <thead>
+
+      <tr>
+        <td>&nbsp;</td>{{#each users}}<td><a href="/Profile/Edit/{{username}}">Edit</a></td> {{/each}}</tr>
+
+        <tr></tr><th>name:</th>{{#each users}} <td> {{username}}{{#if isAdmin}} Admin{{/if}}</td> {{/each}}</tr> 
+        <!--tr><th>Admin:</th>{{#each users}} <td>{{isAdmin}}</td>  {{/each}}</tr--> 
+        <tr><th>&nbsp;</th>{{#each users}} <td><a href="/Profile/Delete/{{username}}">Delete</a></td> {{/each}}</tr> 
+      </tr>
+    </thead>
+    
+  </table>
+  {{else}}
+  no user
+  {{/if}}
+  </div>
+  {{>footer}}
+  </body>   
+  </html>   
